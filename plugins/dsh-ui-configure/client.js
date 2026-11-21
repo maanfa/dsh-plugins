@@ -70,9 +70,12 @@ window.__ModuleLoader__.load({
 .ui-configure-switch:focus-visible { outline: 2px solid var(--dsw-alias-brand-primary, #4d6bfe); outline-offset: 2px; }
 .ui-configure-knob { position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); transition: transform 0.15s ease; }
 .ui-configure-switch[aria-checked='true'] .ui-configure-knob { transform: translateX(16px); }
-.ui-configure-segment { display: flex; flex: none; padding: 2px; border-radius: 8px; background: var(--dsw-alias-fill-l2, rgba(120, 120, 128, 0.16)); }
-.ui-configure-option { border: 0; border-radius: 6px; padding: 3px 10px; background: transparent; color: var(--dsw-alias-label-secondary); font-size: 12px; line-height: 18px; cursor: pointer; transition: background 0.15s ease, color 0.15s ease; }
-.ui-configure-option[aria-pressed='true'] { background: var(--dsw-alias-label-primary, #fff); color: var(--dsw-alias-label-inverted, #0f1115); cursor: default; }
+.ui-configure-segment { display: flex; flex: 0 1 auto; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 4px 18px; min-width: 0; }
+.ui-configure-option { position: relative; border: 0; padding: 0 0 6px; background: transparent; color: var(--dsw-alias-label-secondary); font-size: 13px; line-height: 20px; cursor: pointer; transition: color 0.15s ease; }
+.ui-configure-option::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 1px; background: transparent; transition: background 0.15s ease; }
+.ui-configure-option:hover:not(:disabled):not([aria-pressed='true']) { color: var(--dsw-alias-label-primary); }
+.ui-configure-option[aria-pressed='true'] { color: var(--dsw-alias-label-primary); cursor: default; }
+.ui-configure-option[aria-pressed='true']::after { background: var(--dsw-alias-brand-primary, currentColor); }
 .ui-configure-option:disabled { opacity: 0.45; cursor: not-allowed; }
 .ui-configure-option:focus-visible { outline: 2px solid var(--dsw-alias-brand-primary, #4d6bfe); outline-offset: 1px; }
 .ui-configure-button { flex: none; border: 0.5px solid var(--dsw-alias-border-l2); border-radius: 6px; padding: 4px 10px; background: transparent; color: var(--dsw-alias-label-primary); font-size: 12px; line-height: 18px; cursor: pointer; }

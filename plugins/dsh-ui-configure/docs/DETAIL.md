@@ -18,7 +18,7 @@
 
 ## 实现
 
-- Client 半：注册 `settings.section`（id `ui-configure`），组件自带开关与分段控件样式，读写 `localStorage`：
+- Client 半：注册 `settings.section`（id `ui-configure`），组件自带开关与「窗口位置」三选一控件样式，读写 `localStorage`：
   - `dsh-ui-configure.enabled`（`1` / `0`）
   - `dsh-ui-configure.size`（`{"width":1100,"height":760}`）
   - `dsh-ui-configure.position`（`remember` / `center` / `off`，缺省 `remember`）
@@ -41,4 +41,9 @@
 ## 本地化注意
 
 `ctx.locale.register(ns, { zh, en })` 的字典是**扁平映射**，键就是传给 `t()` 的带点字符串（`'remember.title'`），内置字典也这么写（见 `@deepseek-ai/dsh-client-locale/src/locales/zh.ts`）。写成嵌套对象 `{ remember: { title } }` 时，单层键（`nav`）能查到，带点的键查不到并原地显示键名——这就是 0.2.0 在设置里出现 `remember.title` 的原因。0.2.1 起改为扁平键。
+
+## 主题与选中态
+
+三选一控件用**下划线**表示选中（文字 `label-primary` + 2px `brand-primary` 下划线），不给选中项铺底色。0.2.0/0.2.1 用的是「底色药丸」：`background: var(--dsw-alias-label-primary)`，但 `label-primary` 是**文字色**（浅色主题下接近黑），配 `label-inverted` 的兜底深色文字就变成黑底黑字，选中项直接看不清。教训：主题 token 只按语义用——背景用 `fill-*`，文字用 `label-*`，强调线用 `brand-*`；跨主题的选中态优先用下划线/描边而不是填充。
+
 

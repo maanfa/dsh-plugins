@@ -1,6 +1,6 @@
 {
   "name": "dsh-ui-configure",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "description": "Settings section that remembers and restores the DSH desktop window size and position.",
   "keywords": [
