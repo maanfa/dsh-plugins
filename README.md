@@ -42,6 +42,11 @@ plugins/<name>/
 
 新增插件时复制一个现有目录，改 `package.json` 的 `name`、`cordis.patch.yml` 的行 id、`locale/*.json` 的标题，`pnpm install` 后即可安装。
 
+## 约定
+
+- 人：开发、新增插件、检查与提交规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+- 模型/代理：改代码前读 [AGENTS.md](AGENTS.md)——入口由 `exports` 决定、Host 半必需、locale 必须扁平键、只 `require` 浏览器模块表里的模块、不碰 profile。
+
 ## License
 
 MIT
