@@ -1,0 +1,49 @@
+{
+  "name": "dsh-ui-configure",
+  "version": "0.2.1",
+  "private": true,
+  "description": "Settings section that remembers and restores the DSH desktop window size and position.",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "settings",
+    "window"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maanfa/dsh-plugins.git",
+    "directory": "plugins/dsh-ui-configure"
+  },
+  "type": "module",
+  "scripts": {
+    "check": "node --check client.js && node --check index.js"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

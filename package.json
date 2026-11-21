@@ -1,0 +1,13 @@
+{
+  "name": "dsh-plugins",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Monorepo of DeepSeek Harness client plugins",
+  "packageManager": "pnpm@12.3.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "pnpm -r --if-present run check"
+  }
+}

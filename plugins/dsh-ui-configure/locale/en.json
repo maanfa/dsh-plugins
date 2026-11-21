@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Interface settings",
+    "description": "Adds an Interface section to Settings that remembers the desktop window size and position, or centers the window on every start."
+  }
+}
